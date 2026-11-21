@@ -1,3 +1,4 @@
+
 .scan {
     border-radius: 2%;
     margin: 10px 10px 10px 10px;
@@ -9,6 +10,11 @@
 .scan:hover {
     transition: all 0.2s ease-in-out;
     box-shadow: 0 0 5px 0px;
+}
+
+.scan:focus-visible {
+    outline: 3px solid #fff4e8;
+    outline-offset: 3px;
 }
 
 #scanContainer {
@@ -73,55 +79,116 @@
     background-image: url(imgs/scan38.JPG);
     background-size: cover;
     background-blend-mode: hue;
-    width: 75vw;
-    height: 75vh;
-    padding: 50px;
-    margin: 10px;
-    margin-left: 40px;
-    display: flex;
+    box-sizing: border-box;
+    width: min(94vw, 1100px);
+    max-width: none;
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    padding: clamp(16px, 3vw, 36px);
+    margin: auto;
+    border: 1px solid rgba(200, 146, 146, 0.6);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    gap: clamp(16px, 3vw, 36px);
     position: fixed;
-    color: rgb(200, 146, 146);
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    font-family:monospace;
-    background-color: rgba(71, 84, 86, 1);
-    border-radius: 3%;
-    text-underline-offset: 2px;
-    visibility: hidden;
+    inset: 0;
+    overflow: auto;
+    color: #f7ede8;
+    font: 16px/1.5 monospace;
+    background-color: rgb(71, 84, 86);
+    border-radius: 12px;
+    text-underline-offset: 3px;
+}
+
+.expandedViewContainerGallery:not([open]) {
+    display: none;
+}
+
+.expandedViewContainerGallery::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.scanPreview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
 }
 
 #detailImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    max-height: 65vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
-#closeWindow {
-    font-size: smaller;
-    color: rgb(160, 118, 118);
-    text-decoration: underline;
-    cursor: pointer;
+.scanDetails {
+    padding: 24px;
+    background: #192526;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
 }
 
-.expandedViewContainerGallery ul {
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-left: 20px;
-    list-style-type: none;
+.scanDetails dl {
+    margin: 0 0 24px;
 }
 
-#licenseText {
-    font-size: smaller;
-    color: rgb(160, 118, 118);
+.scanDetails dl > div + div {
+    margin-top: 16px;
+}
+
+.scanDetails dt {
+    color: #e2b4a9;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.scanDetails dd {
+    margin: 2px 0 0;
 }
 
 .expandedViewContainerGallery a {
-    color: rgb(117, 139, 144);
+    color: #b6e0d9;
 }
 
-.expandedViewContainerGallery img {
-    display: flex;
+#licenseText {
+    margin: 24px 0;
+    font-size: 0.9em;
+}
+
+#closeWindow {
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #e2b4a9;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.expandedViewContainerGallery :focus-visible {
+    outline: 2px solid #fff4e8;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    .expandedViewContainerGallery {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #detailImage {
+        max-height: 35vh;
+    }
+
+    .scanDetails {
+        padding: 20px;
+    }
 }
 
 .expandedViewContainer ul {
@@ -148,7 +215,7 @@ nav {
     flex-wrap: nowrap;
     justify-content: center;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: max(16px, 2.5vw);
     color:rgb(119, 145, 138);
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.782);
@@ -166,6 +233,18 @@ nav a:hover {
     text-decoration:underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 32px 16px;
+    }
+
+    .scan {
+        width: min(250px, calc(50% - 20px));
+        height: auto;
+        aspect-ratio: 1;
+    }
 }
 
 h1 {

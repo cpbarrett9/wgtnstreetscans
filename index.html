@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wellington Street Scans - Gallery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Library of urban scans taken in Wellington, NZ">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav id="nav">
+            ❇&emsp;<a href="index.html">GALLERY</a>&emsp;//&emsp;
+            <a href="about.html">ABOUT</a>&emsp;❇
+        </nav>
+        
+         <div id="scanContainer">
+            <!-- Expanded view that opens when an image is clicked: -->
+            <dialog class="expandedViewContainerGallery" id="scanDetailsWindow" aria-label="Scan details">
+                <div class="scanPreview"><img src="imgs/scan13.JPG" id="detailImage" alt="Selected scan" tabindex="-1" autofocus></div>
+                <div class="scanDetails">
+                    <dl>
+                        <div><dt>Location</dt><dd id="locationText">Taranaki St. &amp; Buckle St.</dd></div>
+                        <div><dt>Date</dt><dd id="dateText">October 12th, 2025</dd></div>
+                        <div><dt>Dimensions</dt><dd id="dimensionsText">2560 × 4416px</dd></div>
+                    </dl>
+                    <a download="custom-filename.jpg" href="/path/to/image" id="download">Download</a>
+                    <p id="licenseText">&#169; Free for use with attribution:<br><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a></p>
+                    <button type="button" id="closeWindow">Close Window</button>
+                </div>
+            </dialog>
+            <p id="galleryStatus" role="status">Loading scans...</p>
+            <noscript>JavaScript is required to load the gallery.</noscript>
+         </div>
+         <script src="script.js"></script>
+    </body>
+</html>
