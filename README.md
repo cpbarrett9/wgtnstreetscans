@@ -1,4 +1,17 @@
-# Wellington Street Scans
+# [Wellington Street Scans](http://wgtnstreetscans.pics/)
+
+An image library of walls, sidewalks, street signs, and other surfaces captured
+with an iScan portable document scanner around Wellington, New Zealand. Images
+are free to use for commercial and non-commercial purposes with attribution
+under the Creative Commons Attribution 4.0 International license.
+
+<img src="https://cpbarrett9.github.io/resources/screenshot_streetscans.png" alt="Wellington Street Scans gallery">
+
+## Tech stack
+
+HTML, CSS, JavaScript, and JSON.
+
+## Hosting and development
 
 This is a static site that can be hosted on GitHub Pages. Configure Pages to
 deploy from the desired branch and repository root. All links and assets are
