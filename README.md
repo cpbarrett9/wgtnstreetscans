@@ -1,32 +1,13 @@
-# [Wellington Street Scans](http://wgtnstreetscans.pics/)
+<h1><a href="http://wgtnstreetscans.pics/index.php">wgtnstreetscans.pics</a></h1>
 
-An image library of walls, sidewalks, street signs, and other surfaces captured
-with an iScan portable document scanner around Wellington, New Zealand. Images
-are free to use for commercial and non-commercial purposes with attribution
-under the Creative Commons Attribution 4.0 International license.
+<a href="http://wgtnstreetscans.pics/index.php">Wellington Street Scans</a> is an image library of walls, sidewalks, street signs, and other surfaces that were captured with an iScan portable document scanner in various locations around Wellington, New Zealand. All images are in the gallery page are free to download and use for commercial and non-commercial purposes (with attribution under the Creative Commons Attribution 4.0 International license). You might use these scans in collages, digital art, textures for 3D modelling, or in any other way you see fit.
 
-<img src="https://cpbarrett9.github.io/resources/screenshot_streetscans.png" alt="Wellington Street Scans gallery">
+<img src="https://cpbarrett9.github.io/resources/screenshot_streetscans.png">
 
-## Tech stack
-
-HTML, CSS, JavaScript, and JSON.
-
-## Hosting and development
-
-This is a static site that can be hosted on GitHub Pages. Configure Pages to
-deploy from the desired branch and repository root. All links and assets are
-relative, so it also works under a GitHub Pages project path.
-
-To preview locally, serve the repository over HTTP, for example:
-
-```sh
-python3 -m http.server 8000
-```
-
-Open `http://localhost:8000/`. Opening the HTML file directly may prevent the
-browser from loading the gallery data.
-
-The gallery reads `scans.json`. To add or edit scans, update that file and put
-the corresponding images in `imgs/`; image paths are case-sensitive. The
-original `database.sqlite` is retained as an archive and is not read by the
-site. The navigation background currently selects from scans 0 through 73.
+<h2>Tech Stack</h2>
+<ul>
+  <li>HTML</li>
+  <li>JavaScript</li>
+  <li>JSON</li>
+  <li>CSS</li>
+</ul>
