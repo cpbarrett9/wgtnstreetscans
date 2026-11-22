@@ -14,6 +14,19 @@ if (detailsWindow) {
         detailsWindow.close();
     });
 
+    detailsWindow.addEventListener("click", event => {
+        const bounds = detailsWindow.getBoundingClientRect();
+        const clickedOutside =
+            event.clientX < bounds.left ||
+            event.clientX > bounds.right ||
+            event.clientY < bounds.top ||
+            event.clientY > bounds.bottom;
+
+        if (clickedOutside) {
+            detailsWindow.close();
+        }
+    });
+
     detailsWindow.addEventListener("keydown", event => {
         if (event.key === "Escape") {
             event.preventDefault();
